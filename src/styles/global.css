@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --font-pixel: "VT323", monospace;
+  --animate-blink: blink 1s step-end infinite;
+
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0;
+    }
+  }
+}
+
+@layer utilities {
+  .glitch-text {
+    position: relative;
+  }
+
+  .glitch-text::before,
+  .glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+html,
+body {
+  cursor: url("/arrowhead-rounded-outline.svg"), auto;
+
+  button,
+  a {
+    cursor: url("/hand-pointer.svg"), auto;
+  }
+
+  /* Fallback */
+  background-color: #050505;
+  color: #22c55e;
+  /* Green-500 */
+  font-family: "VT323", monospace;
+  overflow-x: hidden;
+}
+
+/* Custom cursor */
+/* Using a data URI for a simple block cursor or similar can be cool, but crosshair is minimal and built-in */
+/* Let's try to simulate a retro terminal block cursor via CSS if possible, but cursor property is limited to images. */
+/* Using a high-contrast crosshair is very "nerd" */
+
+::selection {
+  background: #22c55e;
+  color: #000;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #15803d;
+  /* Green-700 */
+  border: 1px solid #000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #22c55e;
+}

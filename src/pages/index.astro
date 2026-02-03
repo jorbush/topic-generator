@@ -1,0 +1,119 @@
+---
+import TopicGenerator from "../components/TopicGenerator";
+import SettingsModal from "../components/SettingsModal";
+import "../styles/global.css";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "Topic Generator",
+  description:
+    "A random topic generator designed for English speaking practice and conversation starters.",
+  url: "https://speakingtopicgenerator.vercel.app/",
+  applicationCategory: "EducationalApplication",
+  operatingSystem: "Any",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Topic Generator" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content="topic generator for english speaking" />
+    <meta
+      name="keywords"
+      content="topic generator, conversation starter, english speaking practice, random topics, english learning, ice breakers"
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://speakingtopicgenerator.vercel.app/" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Topic Generator" />
+    <meta
+      property="og:description"
+      content="Topic generator for english speaking practice and conversation starters."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://speakingtopicgenerator.vercel.app/"
+    />
+    <meta
+      property="og:image"
+      content="https://speakingtopicgenerator.vercel.app/favicon.svg"
+    />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Topic Generator" />
+    <meta
+      name="twitter:description"
+      content="Topic generator for english speaking practice and conversation starters."
+    />
+    <meta
+      name="twitter:image"
+      content="https://speakingtopicgenerator.vercel.app/favicon.svg"
+    />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+      rel="stylesheet"
+    />
+    <title>Topic Generator</title>
+  </head>
+  <body
+    class="min-h-screen mt-4 sm:mt-0 relative bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')]"
+  >
+    <div
+      class="pointer-events-none fixed inset-0 z-40 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%] bg-repeat"
+    >
+    </div>
+
+    <main
+      class="relative z-10 flex flex-col items-center justify-center min-h-screen p-4"
+    >
+      <div class="absolute top-4 left-4 text-green-700/50 text-xs">
+        SYS.VER.1.0.0
+      </div>
+
+      <header class="mb-8 text-center pt-2 md:pt-0">
+        <h1
+          class="flex items-center justify-center gap-4 text-4xl md:text-6xl font-bold tracking-tighter mb-2 text-green-500 drop-shadow-[0_0_15px_rgba(34,197,94,0.5)]"
+        >
+          <img
+            src="/favicon.svg"
+            alt="Logo"
+            class="w-10 h-10 md:w-16 md:h-16"
+          />
+          TOPIC_GENERATOR
+        </h1>
+        <p class="text-green-800 tracking-widest text-sm uppercase">
+          >> Initialize conversation protocol...
+        </p>
+      </header>
+
+      <TopicGenerator client:load />
+      <SettingsModal client:load />
+
+      <footer class="mt-16 text-xs text-green-900 font-mono">
+        crafted by <a href="https://github.com/jorbush">jorbush</a>
+      </footer>
+    </main>
+  </body>
+</html>
