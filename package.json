@@ -8,8 +8,8 @@
     "preview": "astro preview",
     "test": "vitest run",
     "astro": "astro",
-    "check-format": "prettier --check src/**/*.{js,jsx,ts,tsx,astro,css,md,mdx}",
-    "format": "prettier --write src/**/*.{js,jsx,ts,tsx,astro,css,md,mdx}"
+    "check-format": "prettier --check src/*",
+    "format": "prettier --write src/*"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
